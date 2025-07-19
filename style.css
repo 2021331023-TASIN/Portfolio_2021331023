@@ -1,4 +1,4 @@
-/* Classic Serif Font */
+/* Import classic serif font */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
 
 * {
@@ -9,8 +9,13 @@
   color: #3a3a3a;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Fix sticky nav overlap */
+}
+
 body {
-  background-color: #faf5eb;  /* light cream */
+  background-color: #faf5eb;  /* Light cream */
   line-height: 1.8;
   font-size: 18px;
 }
@@ -50,7 +55,6 @@ header {
   gap: 1rem;
 }
 
-/* Header photo with circular border */
 .logo-img {
   width: 60px;
   height: 60px;
@@ -66,7 +70,6 @@ header {
   letter-spacing: 1.2px;
 }
 
-/* Nav Links */
 .nav-links {
   list-style: none;
   display: flex;
@@ -85,12 +88,6 @@ header {
   border-color: #a67c00;
   color: #a67c00;
 }
-
-html {
-  scroll-padding-top: 100px;
-  scroll-behavior: smooth; /* optional for nice effect */
-}
-
 
 /* Sections */
 section {
@@ -119,23 +116,29 @@ h2 {
   color: #5a4631;
 }
 
-/* About */
+/* About Section */
 .about-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.8rem;
-  align-items: center;
-  color: #5a4631;
+  gap: 2rem;
+  align-items: flex-start;
 }
 
-/* About photo with subtle rounded corners */
 .profile-img {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  max-width: 100%;
+  aspect-ratio: 1/1;
+  height: auto;
   object-fit: cover;
-  border-radius: 15px; /* soft rounded corners */
-  border: 2px solid #a67c00;
-  box-shadow: 0 4px 8px rgba(166,124,0,0.15);
+  border-radius: 50%; /* Or use 15px for rounded corners */
+  border: 3px solid #a67c00;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.05);
 }
 
 .about-container > div {
@@ -156,12 +159,12 @@ h2 {
   border: 1.5px solid #a67c00;
   border-radius: 8px;
   padding: 1.5rem;
-  box-shadow: 0 0 12px rgba(166,124,0,0.12);
+  box-shadow: 0 0 12px rgba(166, 124, 0, 0.12);
   transition: box-shadow 0.3s ease;
 }
 
 .project:hover {
-  box-shadow: 0 8px 20px rgba(166,124,0,0.3);
+  box-shadow: 0 8px 20px rgba(166, 124, 0, 0.3);
 }
 
 .project h3 {
@@ -186,7 +189,7 @@ h2 {
   border-radius: 30px;
   font-weight: 600;
   font-size: 1rem;
-  box-shadow: 0 4px 8px rgba(166,124,0,0.3);
+  box-shadow: 0 4px 8px rgba(166, 124, 0, 0.3);
   transition: background-color 0.3s ease;
 }
 
@@ -202,7 +205,8 @@ form {
   margin-bottom: 2rem;
 }
 
-input, textarea {
+input,
+textarea {
   padding: 1rem;
   border: 2px solid #d2c6a0;
   border-radius: 6px;
@@ -213,10 +217,11 @@ input, textarea {
   transition: border-color 0.3s ease;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   outline: none;
   border-color: #a67c00;
-  box-shadow: 0 0 6px rgba(166,124,0,0.5);
+  box-shadow: 0 0 6px rgba(166, 124, 0, 0.5);
 }
 
 /* Button */
@@ -278,13 +283,15 @@ footer {
   color: #7d5a00;
 }
 
-/* Responsive */
+/* Responsive tweaks */
 @media (max-width: 768px) {
   .about-container {
     flex-direction: column;
+    text-align: center;
   }
 
   .profile-img {
+    display: block;
     margin: 0 auto;
   }
 
